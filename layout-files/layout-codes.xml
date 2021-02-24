@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>	
+		<!-- referenceContainer -->
+		<referenceContainer name="content">
+			<block class="Magento\Framework\View\Element\Template" name="product-custom-detail" before="-" template="Magento_Theme::text.phtml"/>
+		</referenceContainer>
+
+		<!-- move block/container -->
+	    <move element="customize.button" destination="product.info.main" after="product.info.price" />
+
+	    <!-- remove block -->
+	    <referenceBlock name="breadcrumbs" remove="true" />
+
+	    <!-- remove container -->
+	    <referenceContainer name="product.info.stock.sku" remove="true" />
+
+        <!-- create container -->   
+	    <container name="product.info.custom" htmlTag="div" htmlClass="product-custom" after="product.info.media">
+		</container>
+		
+	</body>
+</page>
