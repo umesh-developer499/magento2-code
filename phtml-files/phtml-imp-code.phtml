@@ -1,4 +1,5 @@
 <?php
+//phtml code
 //media url
 $mediaUrl= $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl();
 
@@ -28,4 +29,4 @@ $tableName = $resource->getTableName('setup_module');
 // SELECT DATA
 $sql = "SELECT * FROM " . $tableName;
 $result = $connection->fetchAll($sql); 
-echo '<pre>'; print_r($result); echo '</pre>'; 
+echo '<pre>'; print_r($result); echo '</pre>';
