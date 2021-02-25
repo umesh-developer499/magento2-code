@@ -1,0 +1,22 @@
+<?php
+//media url
+$mediaUrl= $this->helper('\Magento\Cms\Helper\Wysiwyg\Images')->getBaseUrl();
+
+//module images
+ echo $block->getViewFileUrl('Your_Module::images/demo.jpg');
+ 
+ //media url
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+echo $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                    ->getStore()
+                    ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+//get store url
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+echo $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                    ->getStore()
+                    ->getBaseUrl();                   
+//system config
+$conf = $objectManager
+             ->get('Magento\Framework\App\Config\ScopeConfigInterface')
+             ->getValue('section_id/group_id/field_id');
