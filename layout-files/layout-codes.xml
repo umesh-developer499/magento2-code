@@ -18,6 +18,25 @@
         <!-- create container -->   
 	    <container name="product.info.custom" htmlTag="div" htmlClass="product-custom" after="product.info.media">
 		</container>
+
+		<!-- custom page breadcrum -->
+        <referenceBlock name="breadcrumbs">
+                    <action method="addCrumb">
+                        <argument name="crumbName" xsi:type="string" translate="true">home</argument>
+                        <argument name="crumbInfo" xsi:type="array" translate="true">
+                            <item name="title" xsi:type="string" translate="true">Home</item>
+                            <item name="label" xsi:type="string" translate="true">Home</item>
+                            <item name="link" xsi:type="string" translate="true">/</item>
+                        </argument>
+                    </action>
+                    <action method="addCrumb">
+                        <argument name="crumbName" xsi:type="string" translate="true">help</argument>
+                        <argument name="crumbInfo" xsi:type="array" translate="true">
+                            <item name="title" xsi:type="string" translate="true">Help</item>
+                            <item name="label" xsi:type="string" translate="true">Help</item>
+                        </argument>
+                    </action>
+        </referenceBlock>
 		
 	</body>
 </page>
