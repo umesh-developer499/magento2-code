@@ -20,3 +20,12 @@ echo $objectManager->get('Magento\Store\Model\StoreManagerInterface')
 $conf = $objectManager
              ->get('Magento\Framework\App\Config\ScopeConfigInterface')
              ->getValue('section_id/group_id/field_id');
+
+//resource connection
+$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+$connection = $resource->getConnection();
+$tableName = $resource->getTableName('setup_module');
+// SELECT DATA
+$sql = "SELECT * FROM " . $tableName;
+$result = $connection->fetchAll($sql); 
+echo '<pre>'; print_r($result); echo '</pre>'; 
