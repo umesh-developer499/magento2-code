@@ -30,3 +30,14 @@ $tableName = $resource->getTableName('setup_module');
 $sql = "SELECT * FROM " . $tableName;
 $result = $connection->fetchAll($sql); 
 echo '<pre>'; print_r($result); echo '</pre>';
+
+//brand
+$product=$this->getProduct();
+$attr = $product->getResource()->getAttribute('layernav_brand');
+if ($attr->usesSource()) { ?>
+<div class="barnd">
+    <span>
+    <?php echo $attr->getSource()->getOptionText($product->getLayernavBrand());?>
+    </span>
+</div>
+<?php } ?>
