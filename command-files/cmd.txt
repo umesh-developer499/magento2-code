@@ -1,0 +1,31 @@
+php bin/magento cache:clean
+
+php bin/magento indexer:reset
+php bin/magento indexer:reindex
+
+rm -rf var/cache/* var/page_cache/* var/view_preprocessed/*
+
+rm -rf var/cache/* var/page_cache/* var/view_preprocessed/* pub/static/*
+
+sudo chmod -R 777 *
+
+sudo chmod -R 777 var/cache/ var/page_cache/ var/view_preprocessed/ generated/code/* pub/static/*
+
+php bin/magento indexer:reset cataloginventory_stock
+
+//finding files changes
+find . -mtime -2 -ls
+
+rm -rf var/view_preprocessed/ pub/static/frontend/ pub/static/_requirejs/ var/cache var/di var/page_cache pub/static/_cache
+
+php bin/magento indexer:info
+
+php bin/magento indexer:status
+
+php bin/magento setup:static-content:deploy --theme TemplateMonster/theme074
+
+ php bin/magento setup:static-content:deploy en_US en_GB -f
+
+php -dmemory_limit=5G bin/magento setup:di:compile
+
+php -dmemory_limit=5G bin/magento setup:static-content:deploy
