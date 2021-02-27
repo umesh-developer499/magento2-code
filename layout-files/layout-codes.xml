@@ -37,6 +37,11 @@
                         </argument>
                     </action>
         </referenceBlock>
-		
+		 <!-- set template -->  
+            <referenceBlock name="customer_form_login">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="string">Ced_MobileLogin::login.phtml</argument>
+                </action>
+            </referenceBlock>
 	</body>
 </page>
